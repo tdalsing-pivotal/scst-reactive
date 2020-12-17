@@ -1,0 +1,9 @@
+server:
+  port: 8401
+
+spring:
+  cloud:
+    stream:
+      bindings:
+        producer-out-0:
+          destination: scst-reactive
