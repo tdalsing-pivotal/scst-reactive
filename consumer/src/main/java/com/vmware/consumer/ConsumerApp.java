@@ -34,6 +34,6 @@ public class ConsumerApp {
                     return map;
                 })
                 .doOnNext(map -> log.info("consumer: 3: map = {}", map))
-                .subscribe(map -> log.info("consumer: map = {}", map));
+                .subscribe(map -> log.info("consumer: 4: map = {}", map));
     }
 }
