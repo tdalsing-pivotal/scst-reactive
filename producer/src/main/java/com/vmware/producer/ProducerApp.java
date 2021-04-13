@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import reactor.core.publisher.Flux;
 
 import java.util.Map;
 
@@ -33,8 +34,9 @@ public class ProducerApp {
 
     @PostMapping("/")
     @ResponseStatus(CREATED)
-    public void post(@RequestBody Map<String, Object> data) {
-        log.info("post: data = {}", data);
-        bridge.send("producer-out-0", data);
+    public void post(@RequestBody Flux<Map<String, Object>> flux) {
+        flux
+                .doOnNext(data -> log.info("post: data = {}", data))
+                .subscribe(data -> bridge.send("producer-out-0", data));
     }
 }

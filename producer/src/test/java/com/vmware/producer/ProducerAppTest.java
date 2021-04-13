@@ -1,6 +1,7 @@
 package com.vmware.producer;
 
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.reactive.function.client.WebClient;
 
@@ -14,6 +15,7 @@ class ProducerAppTest {
 
     WebClient client = WebClient.create("http://localhost:8401");
 
+    @Disabled
     @Test
     void post() throws Exception {
         for (int i = 0; i < 10; ++i) {
