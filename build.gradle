@@ -1,10 +1,9 @@
 plugins {
     id "java"
-    id "io.spring.dependency-management" version "1.0.10.RELEASE"
+    id "io.spring.dependency-management" version "1.0.11.RELEASE"
 }
 
 repositories {
-    jcenter()
     mavenCentral()
 }
 
@@ -29,18 +28,18 @@ subprojects {
     
     dependencyManagement {
         dependencies {
-            dependency "org.springframework.cloud:spring-cloud-stream-binder-kafka:3.0.10.RELEASE"
-            dependency "org.springframework.boot:spring-boot-starter-webflux:2.4.1"
+            dependency "org.springframework.cloud:spring-cloud-stream-binder-kafka:3.1.3"
+            dependency "org.springframework.boot:spring-boot-starter-webflux:2.5.4"
             dependency "org.apache.commons:commons-lang3:3.11"
         }
     }
 
     dependencies {
-        compileOnly "org.projectlombok:lombok:1.18.16"
-        annotationProcessor "org.projectlombok:lombok:1.18.16"
+        compileOnly "org.projectlombok:lombok:1.18.20"
+        annotationProcessor "org.projectlombok:lombok:1.18.20"
 
-        testCompileOnly "org.projectlombok:lombok:1.18.16"
-        testAnnotationProcessor "org.projectlombok:lombok:1.18.16"
+        testCompileOnly "org.projectlombok:lombok:1.18.20"
+        testAnnotationProcessor "org.projectlombok:lombok:1.18.20"
 
         testImplementation "org.junit.jupiter:junit-jupiter-api:5.7.0"
     }
