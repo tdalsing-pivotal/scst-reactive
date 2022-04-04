@@ -27,8 +27,8 @@ subprojects {
     
     dependencyManagement {
         dependencies {
-            dependency "org.springframework.cloud:spring-cloud-stream-binder-kafka:3.1.4"
-            dependency "org.springframework.boot:spring-boot-starter-webflux:2.5.5"
+            dependency "org.springframework.cloud:spring-cloud-stream-binder-kafka:3.2.2"
+            dependency "org.springframework.boot:spring-boot-starter-webflux:2.6.6"
             dependency "org.apache.commons:commons-lang3:3.11"
         }
     }
